@@ -1,0 +1,24 @@
+<터미널 환경: SSL 관련 에러 발생>
+
+'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1045)'))'
+
+
+
+<해결법>
+
+1. pip --trusted-host pypi.org --trusted-host files.pythonhosted.org install request
+
+
+2. config 또는 ini 수정
+
+    1) config 파일을 생성 or 오픈
+
+        1) 맥 OS : $HOME/Library/Application Support/pip/pip.conf 이나 $HOME/.config/pip/pip.conf.
+
+        2) 윈도우 : %APPDATA%\pip\pip.ini 이나 %HOME%\pip\pip.ini
+
+    2) config 파일 내용 추가
+
+    [global]
+    trusted-host = pypi.org
+                   files.pythonhosted.org
